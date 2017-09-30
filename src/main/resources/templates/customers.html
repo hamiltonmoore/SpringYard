@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>customers</title>
+</head>
+<body>
+<div class="wrapper">
+    <nav>
+        <a href="/">Home</a>
+        <a href="add_customer">add customer</a>
+    </nav>
+    <div class="customerList">
+        <tr th:each="customer : ${customers}">
+            <td th:text="${customer.id}"></td>
+            <td th:text="${customer.firstName}"></td>
+            <td th:text="${customer.lastName}"></td>
+            <a href="view_customer">view customer data</a>
+        </tr>
+    </div>
+</div>
+</body>
+</html>

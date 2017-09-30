@@ -1,17 +1,20 @@
 package com.example.customer.model;
 
 public class Customer {
-    int id;
+    String id;
     String firstName;
     String lastName;
     String phone;  //might have the change the type here
     String email;
 
-    public int getId() {
+    public Customer() {
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

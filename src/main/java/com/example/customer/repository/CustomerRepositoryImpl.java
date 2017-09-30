@@ -27,7 +27,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     private final String SELECT_BY_ID_SQL = "SELECT * FROM customer WHERE id = ?";
 
     @Override
-    public Customer getById(int id) {
+    public Customer getById(String id) {
         return jdbcTemplate.queryForObject(SELECT_BY_ID_SQL, new CustomerMapper(), id);
     }
 
@@ -48,7 +48,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     private final String DELETE_SQL = "DELETE FROM customer WHERE id=?";
 
     @Override
-    public void delete(int id) {
+    public void delete(String id) {
         jdbcTemplate.update(DELETE_SQL, id);
     }
 
@@ -58,7 +58,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         @Override
         public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
             Customer customer = new Customer();
-            customer.setId(rs.getInt("id"));
+            customer.setId(rs.getString("id"));
             customer.setFirstName(rs.getString("firstName"));
             customer.setLastName(rs.getString("lastName"));
             return customer;
