@@ -4,8 +4,8 @@ import java.util.List;
 
 public interface CustomerService {
         void add(Customer customer);
-        Customer getById(String id);
+        Customer getById(int id);
         List<Customer> get();
         void update(Customer customer);
-        void delete(String id);
+        void delete(int id);
     }

@@ -17,17 +17,17 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    private final String INSERT_SQL = "INSERT INTO customer (firstName, lastName) VALUES (?,?)";
+    private final String INSERT_SQL = "INSERT INTO customer (firstName, lastName, phone, email) VALUES (?,?,?,?)";
 
     @Override
     public void add(Customer customer) {
-        jdbcTemplate.update(INSERT_SQL, customer.getFirstName(), customer.getLastName());
+        jdbcTemplate.update(INSERT_SQL, customer.getFirstName(), customer.getLastName(), customer.getPhone(), customer.getEmail());
     }
 
     private final String SELECT_BY_ID_SQL = "SELECT * FROM customer WHERE id = ?";
 
     @Override
-    public Customer getById(String id) {
+    public Customer getById(int id) {
         return jdbcTemplate.queryForObject(SELECT_BY_ID_SQL, new CustomerMapper(), id);
     }
 
@@ -42,13 +42,13 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
     @Override
     public void update(Customer customer) {
-        jdbcTemplate.update(UPDATE_SQL, customer.getFirstName(), customer.getLastName(), customer.getId());
+        jdbcTemplate.update(UPDATE_SQL, customer.getFirstName(), customer.getLastName(), customer.getPhone(), customer.getEmail());
     }
 
     private final String DELETE_SQL = "DELETE FROM customer WHERE id=?";
 
     @Override
-    public void delete(String id) {
+    public void delete(int id) {
         jdbcTemplate.update(DELETE_SQL, id);
     }
 
@@ -58,9 +58,11 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         @Override
         public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
             Customer customer = new Customer();
-            customer.setId(rs.getString("id"));
-            customer.setFirstName(rs.getString("firstName"));
-            customer.setLastName(rs.getString("lastName"));
+            customer.setId(rs.getInt("id"));
+            customer.setFirstName(rs.getString("firstname"));
+            customer.setLastName(rs.getString("lastname"));
+            customer.setPhone(rs.getString("phone"));
+            customer.setEmail(rs.getString("email"));
             return customer;
         }
 

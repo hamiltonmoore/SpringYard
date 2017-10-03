@@ -1,7 +1,7 @@
 package com.example.customer.model;
 
 public class Customer {
-    String id;
+    int id;
     String firstName;
     String lastName;
     String phone;  //might have the change the type here
@@ -10,11 +10,11 @@ public class Customer {
     public Customer() {
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

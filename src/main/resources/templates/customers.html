@@ -18,7 +18,7 @@
             <td th:text="${customer.id}"></td>
             <td th:text="${customer.firstName}"></td>
             <td th:text="${customer.lastName}"></td>
-            <a href="view_customer">view customer data</a>
+            <a th:href="@{/view_customer/} + ${customer.id}">view customer data</a>
         </tr>
     </div>
 </div>

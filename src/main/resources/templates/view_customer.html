@@ -11,7 +11,7 @@
 <div class="wrapper">
     <nav>
         <a href="/">Home</a>
-        <a href="customers">customers</a>
+        <a href="/customers">customers</a>
     </nav>
     <div class="customer">
         <span th:text="${customer.id}"></span>
@@ -19,6 +19,7 @@
         <span th:text="${customer.lastName}"></span>
         <span th:text="${customer.phone}"></span>
         <span th:text="${customer.email}"></span>
+        <form th:action="@{/customers/} + ${customer.id}" method="POST"><button>DELETE</button></form>
     </div>
 </div>
 </body>
