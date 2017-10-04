@@ -23,11 +23,6 @@ public class CustomerController {
         return "home";
     }
 
-    @RequestMapping("/add_customer")
-    public String addcustomer() {
-        return "add_customer";
-    }
-
     @RequestMapping(path="/add_customer", method = RequestMethod.POST)
     public String createCustomer(@RequestParam(value="firstName") String firstName,
                                 @RequestParam(value="lastName") String lastName,
