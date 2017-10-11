@@ -17,6 +17,13 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    private String CREATE_SQL = "CREATE TABLE IF NOT EXISTS customer (id serial not null, firstName text not null, " +
+            "lastName text not null, phone text, email text, constraint customer_pkey primary key (id));";
+
+    public void createTable() {
+        jdbcTemplate.execute(CREATE_SQL);
+    }
+
     private final String INSERT_SQL = "INSERT INTO customer (firstName, lastName, phone, email) VALUES (?,?,?,?)";
 
     @Override

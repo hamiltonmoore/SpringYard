@@ -41,4 +41,8 @@ public class CustomerServiceImpl implements CustomerService {
     public void delete(int id) {
         customerRepository.delete(id);
     }
+
+    public void createTable() {
+        customerRepository.createTable();
+    }
 }

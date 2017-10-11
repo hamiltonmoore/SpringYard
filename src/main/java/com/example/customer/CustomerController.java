@@ -3,12 +3,15 @@ package com.example.customer;
 import com.example.customer.model.Customer;
 import com.example.customer.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.annotation.PostConstruct;
 
 
 @Controller
@@ -17,6 +20,11 @@ public class CustomerController {
 
     @Autowired
     CustomerService customerService;
+
+    @PostConstruct
+    private void createTables(){
+        customerService.createTable();
+    }
 
     @RequestMapping("/")
     public String home() {
