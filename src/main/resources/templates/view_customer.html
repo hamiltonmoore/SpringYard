@@ -22,6 +22,7 @@
         <span th:text="${customer.phone}"></span>
         <span th:text="${customer.email}"></span>
         <form th:action="@{/customers/} + ${customer.id}" method="POST"><button>DELETE</button></form>
+        <form th:action="@{/update/} + ${customer.id}" method="POST"><button>UPDATE</button></form>
     </div>
 </div>
 </body>
