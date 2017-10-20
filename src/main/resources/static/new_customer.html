@@ -10,11 +10,15 @@
     <title>add_customer</title>
 </head>
 <body>
-<div class="wrapper">
+<div class="container">
+    <header>
     <nav>
         <a href="/">Home</a>
-        <a href="customers">customers</a>
+        <a href="customers">Customers</a>
     </nav>
+    </header>
+    <div class="moveBox">
+    <div class="addNew">
     <form action="/add_customer" method="POST">
         <input type="text" name="firstName" placeholder="first name"/>
         <input type="text" name="lastName" placeholder="last name"/>
@@ -22,6 +26,8 @@
         <input type="email" name="email" placeholder="email"/>
         <button>Submit New Customer</button>
     </form>
+    </div>
+    </div>
 </div>
 </body>
 </html>

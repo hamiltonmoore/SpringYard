@@ -68,9 +68,9 @@ public class CustomerController {
     }
 
     @RequestMapping(path="/update/{id}", method = RequestMethod.POST)
-    public String update(@PathVariable Integer id) {
-        customerService.update(customer);   //this bit may need to be by id, right now customerService reflects customer
-        return "redirect:/customer.html";
+    public String update(@PathVariable Integer id, Customer customer) {
+        customerService.update(customer, id);   //this bit may need to be by id, right now customerService reflects customer
+        return "redirect:/customers.html";
     }
 
 }

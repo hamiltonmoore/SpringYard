@@ -31,8 +31,8 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Transactional
     @Override
-    public void update(Customer customer) {
-        customerRepository.update(customer);
+    public void update(Customer customer, int id) {
+        customerRepository.update(customer, id);
 
     }
 

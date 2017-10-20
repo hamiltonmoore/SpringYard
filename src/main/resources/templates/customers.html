@@ -11,18 +11,23 @@
 </head>
 <body>
 <div class="wrapper">
+    <header>
     <nav>
         <a href="/">Home</a>
-        <a href="add_customer">add customer</a>
+        <a href="new_customer.html">add customer</a>
     </nav>
+    </header>
     <div class="customerList">
+
         <tr th:each="customer : ${customers}">
+            <div class="customer">
             <td th:text="${customer.id}"></td>
             <td th:text="${customer.firstName}"></td>
             <td th:text="${customer.lastName}"></td>
             <a th:href="@{/view_customer/} + ${customer.id}">view customer data</a>
+            </div>
         </tr>
+        </div>
     </div>
-</div>
 </body>
 </html>

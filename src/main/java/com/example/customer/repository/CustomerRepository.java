@@ -8,7 +8,7 @@ public interface CustomerRepository {
     void add(Customer customer);
     Customer getById(int id);
     List<Customer> get();
-    void update(Customer customer);
+    void update(Customer customer, int id);
     void createTable();
     void delete(int id);
 }

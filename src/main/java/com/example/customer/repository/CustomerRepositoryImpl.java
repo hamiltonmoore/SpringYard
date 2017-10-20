@@ -45,11 +45,11 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         return jdbcTemplate.query(SELECT_SQL, new CustomerMapper());
     }
 
-    private final String UPDATE_SQL = "UPDATE customer SET firstName=?, lastName=? where id=?";
+    private final String UPDATE_SQL = "UPDATE customer SET firstName=?, lastName=?, phone=?, email=? where id=?";
 
     @Override
-    public void update(Customer customer) {
-        jdbcTemplate.update(UPDATE_SQL, customer.getFirstName(), customer.getLastName(), customer.getPhone(), customer.getEmail());
+    public void update(Customer customer, int id) {
+        jdbcTemplate.update(UPDATE_SQL, customer.getFirstName(), customer.getLastName(), customer.getPhone(), customer.getEmail(), id);
     }
 
     private final String DELETE_SQL = "DELETE FROM customer WHERE id=?";

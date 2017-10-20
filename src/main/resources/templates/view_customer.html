@@ -1,5 +1,5 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport"
@@ -7,14 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <link rel="stylesheet" type="text/css" media="all"
           href="css/main.css"/>
-    <title>Document</title>
+    <title>View_Customer</title>
 </head>
 <body>
-<div class="wrapper">
+<div class="container">
+    <header>
     <nav>
         <a href="/">Home</a>
         <a href="/customers">customers</a>
     </nav>
+    </header>
     <div class="customer">
         <span th:text="${customer.id}"></span>
         <span th:text="${customer.firstName}"></span>
@@ -22,7 +24,13 @@
         <span th:text="${customer.phone}"></span>
         <span th:text="${customer.email}"></span>
         <form th:action="@{/customers/} + ${customer.id}" method="POST"><button>DELETE</button></form>
-        <form th:action="@{/update/} + ${customer.id}" method="POST"><button>UPDATE</button></form>
+        <form th:action="@{/update/} + ${customer.id}" method="POST">
+            <input type="text" name="firstName"/>
+            <input type="text" name="lastName"/>
+            <input type="text" name="phone"/>
+            <input type="text" name="email"/>
+            <button>UPDATE</button>
+        </form>
     </div>
 </div>
 </body>
