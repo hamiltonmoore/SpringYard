@@ -1,0 +1,142 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    border-bottom: .25rem solid #0099CC;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    height: 3.5rem;
+    background: white;
+}
+
+h4 {
+    color: #0099CC;
+    font-size: 1.3rem;
+    padding-left: .75rem;
+}
+
+.wrapper {
+    min-height: 100vh;
+}
+
+.customerList {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+nav {
+    padding-top: 1.7rem;
+}
+
+nav a {
+    color: #0099CC;
+    font-size: 1.3rem;
+    padding-left: .75rem;
+    padding-top: 1rem;
+    text-decoration: none;
+}
+
+.moveBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.addNew {
+    margin: 0 auto;
+    padding: 4rem;
+    border: .25rem solid #0099CC;
+    height:40%;
+}
+
+.goToBox {
+    margin: 0 auto;
+    padding: 4rem;
+    border: .25rem solid #0099CC;
+    height: 33%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    outline: none;
+    border: .12rem solid #0099CC;
+    margin: 5px;
+    height: 1.35rem;
+    width: 95%;
+}
+
+button {
+    outline: none;
+    border: none;
+    color: white;
+    background: #0099CC;
+}
+
+.goToBox a {
+    text-decoration: none;
+    color: #0099CC;
+    font-size: 1rem;
+    outline: none;
+    padding-left: .3rem;
+    padding-right: .3rem;
+}
+
+.customer {
+    width: 100%;
+    border-bottom: .15rem solid #0099CC;
+    height: 2rem;
+    padding-top: .5rem;
+    padding-left: .9rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+tr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.customer a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #0099CC;
+    padding-right: 1.2rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.individualC {
+    border: .25rem solid #0099CC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+    height: 15rem;
+}
+
+.information {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    padding-right: 1.5rem;
+}
