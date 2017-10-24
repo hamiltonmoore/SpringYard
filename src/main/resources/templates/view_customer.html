@@ -27,10 +27,10 @@
         <form th:action="@{/customers/} + ${customer.id}" method="POST"><button>DELETE</button></form>
     </div>
         <form th:action="@{/update/} + ${customer.id}" method="POST">
-            <input type="text" name="firstName"/>
-            <input type="text" name="lastName"/>
-            <input type="text" name="phone"/>
-            <input type="text" name="email"/>
+            <input type="text" name="firstName" th:value="${customer.firstName}"/>
+            <input type="text" name="lastName" th:value="${customer.lastName}"/>
+            <input type="text" name="phone" th:value="${customer.phone}"/>
+            <input type="text" name="email" th:value="${customer.email}"/>
             <button>UPDATE</button>
         </form>
     </div>

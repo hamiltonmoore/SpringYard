@@ -10,6 +10,7 @@ header {
     top: 0px;
     height: 3.5rem;
     background: white;
+    z-index: 1;
 }
 
 h4 {
@@ -20,6 +21,10 @@ h4 {
 
 .wrapper {
     min-height: 100vh;
+    background-image: url(../images/photo-1481437156560-3205f6a55735.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -5px;
 }
 
 .customerList {
@@ -42,6 +47,12 @@ nav a {
     text-decoration: none;
 }
 
+p {
+    color: #0099CC;
+    font-size: 1.3rem;
+    padding-left: .75rem;
+}
+
 .moveBox {
     display: flex;
     justify-content: center;
@@ -54,6 +65,8 @@ nav a {
     padding: 4rem;
     border: .25rem solid #0099CC;
     height:40%;
+    background-color: white;
+    opacity: .8;
 }
 
 .goToBox {
@@ -61,6 +74,8 @@ nav a {
     padding: 4rem;
     border: .25rem solid #0099CC;
     height: 33%;
+    background-color: white;
+    opacity: .8;
 }
 
 form {
@@ -101,6 +116,9 @@ button {
     padding-left: .9rem;
     display: flex;
     justify-content: space-between;
+    color: #0099CC;
+    opacity: .8;
+    background-color: white;
 }
 
 
@@ -118,6 +136,9 @@ tr {
 }
 
 .container {
+    background-image: url(../images/photo-1481437156560-3205f6a55735.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,6 +152,8 @@ tr {
     align-items: center;
     width: 55%;
     height: 15rem;
+    background-color: white;
+    opacity: .8;
 }
 
 .information {
@@ -138,5 +161,5 @@ tr {
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    padding-right: 1.5rem;
+    padding-right: 4rem;
 }
